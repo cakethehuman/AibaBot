@@ -1,15 +1,19 @@
+import logging
+
 import discord
 from discord import app_commands
 from discord.ext import commands
 
 from ..services.outputformat import make_output
 
+logger = logging.getLogger(__name__)
 class Soushin(commands.Cog):
     def __init__(self, bot: commands.Bot):
         self.bot = bot
         
     @app_commands.command(name="soushin", description="Say hello to Aiba")
     async def soushin_command(self, interaction: discord.Interaction):
+        logging.info("Used Hello command")
         title = "🌸 こんにちは!"
         description = ("私は **AIBA**! 🌟\n"
                        "Kamu penasaran apa itu soushin?\n"
