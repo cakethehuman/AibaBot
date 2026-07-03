@@ -12,8 +12,8 @@ class Soushin(commands.cog):
     async def soushin_command(self, interaction: discord.Interaction):
         title = "🌸 こんにちは!"
         description = ("私は **AIBA**! 🌟\n"
-                       "Aku maskot utama soushin yang siap membantu kamu di sever ini\n"
-                        "Gunnakan command /help untuk liat semua command pada server"
+                       "Kamu penasaran apa itu soushin?\n"
+                        "Soushin adalah ........"
                         )
     
         embed = make_output(title,description)
@@ -34,8 +34,7 @@ class Soushin(commands.cog):
     async def bph_command(self, interaction: discord.Interaction):
         title = "🌸 こんにちは!"
         description = ("私は **AIBA**! 🌟\n"
-                       "Aku maskot utama shoushin yang siap membantu kamu di sever ini\n"
-                        "Gunnakan command /help untuk liat semua command pada server"
+                       "lagi di buat"
                         )
     
         embed = make_output(title,description)

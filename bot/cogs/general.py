@@ -44,7 +44,7 @@ class General(commands.Cog):
         title = "🌸 こんにちは "
         
         description= (
-            "Server shoushin lah intinya"
+            "• `#general-chatroom` - untuk ngomong bersama"
         )
 
         embed = make_output(title,description)
