@@ -50,17 +50,5 @@ class General(commands.Cog):
         embed = make_output(title,description)
         await interaction.response.send_message(embed=embed)
 
-    @app_commands.command(name="soushin", description="Informasi mengenai server")
-    async def about_command(self, interaction: discord.Interaction):
-
-        title = "🌸 こんにちは "
-        
-        description= (
-            "Jelasin "
-        )
-
-        embed = make_output(title,description)
-        await interaction.response.send_message(embed=embed)
-
 async def setup(bot: commands.Bot):
     await bot.add_cog(General(bot))

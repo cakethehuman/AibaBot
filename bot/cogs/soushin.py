@@ -4,8 +4,8 @@ from discord.ext import commands
 
 from ..services.outputformat import make_output
 
-class Soushin(commands.cog):
-    def __init__(self, bot: commands.bot):
+class Soushin(commands.Cog):
+    def __init__(self, bot: commands.Bot):
         self.bot = bot
         
     @app_commands.command(name="soushin", description="Say hello to Aiba")
