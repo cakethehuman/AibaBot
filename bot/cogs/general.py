@@ -12,10 +12,10 @@ class General(commands.Cog):
 
     @app_commands.command(name="hello", description="Say hello to Aiba")
     async def hello_command(self, interaction: discord.Interaction):
-        title = "🌸 こんにちは!"
-        description = ("私は **AIBA**! 🌟\n"
-                       "Aku maskot utama shoushin yang siap membantu kamu di sever ini\n"
-                        "Gunnakan command /help untuk liat semua command pada server"
+        title = "🌸 こんにちわっっ、先輩ー！"
+        description = ("Aku **AIBA**! 🌟 Maskot utama Soushin yang bakal setia nemenin "
+                        "dan bantuin kamu di server ini! Hehe~ 0////0 \n\n"
+                        "✨ *Pstt...* Gunakan command `/help` yaa untuk mengetahui command lain...."
                         )
     
         embed = make_output(title,description)
@@ -31,6 +31,7 @@ class General(commands.Cog):
             "• `/hello` — Kenalan dengan aiba 🌸.\n"
             "• `/help` — Menampilkan daftar command pada server.\n"
             "• `/about` — Informasi mengenai server.\n"
+            "**🦢 Soushin Commands**\n\n"
             "• `/soushin` — Pelajari apa itu Soushin.\n"
         )
 

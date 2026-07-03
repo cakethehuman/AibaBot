@@ -10,7 +10,7 @@ def make_output(title, description):
         color=discord.Color.dark_red()
     )
     quotes = ['Be who you are and say what you feel', "Do you know who made this bot?", 
-              "ketika pintu ditutup, masih ada jendela - BPH soushin", "ya udah lah ya",
+              "ketika pintu ditutup, masih ada jendela", "ya udah lah ya",
               "UMAAAAAAAAA"]
     random_quotes = random.choice(quotes)
     waktu_message = datetime.now().strftime("%H:%M")
