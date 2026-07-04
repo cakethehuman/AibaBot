@@ -62,6 +62,17 @@ class General(commands.Cog):
         embed = make_output(title,description)
         
         embed.add_field(
+            name="💬 ──────── Important ────────",
+            value=(
+                "**<#1149360980317454337>** - Tempat nyambut temen-temen baru! Jangan lupa disapa yaa~ (≧◡≦)n\n"
+                "**<#1149355230912323586>** - Pengumuman acara Soushin dong! Jangan sampe ketinggalan hihi 🎏\n"
+                "**<#1149355230912323585>** - Tolong baca rules-nya dulu ya! (´｡• ᵕ •｡`) ♡a\n"
+                "**<#1150401034812932188>** - Ambil self-roles kamu di sini yaaa \n"
+            ),
+            inline=False
+        )
+        
+        embed.add_field(
             name="💬 ──────── Sosial ────────",
             value=(
                 "**<#1149357512143945828>** - Tempat ngobrol bareng\n"
