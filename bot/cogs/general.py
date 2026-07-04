@@ -98,6 +98,29 @@ class General(commands.Cog):
             inline = False
         )
         
+        embed.add_field(
+            name="🍡 ──────── Fandom ────────",
+            value =( 
+                "**<#1150390344916148236>** - Anime 🏯\n"    
+                "**<#1150311053041868850>** - Genshin impact\n"
+                "**<#1150311089825906750>** - Honkai: Star Rail\n"
+                "**<#1150311370093502495>** - Wuthering Waves \n"
+                "**<#1150430616437923982>** - Manga dan manhwa \n"
+            ),
+            inline = False
+        )
+        
+        embed.add_field(
+            name="👾 ──────── Gaming ────────",
+            value =( 
+                "**<#1289434009146753074>** - Gaming chat💬\n"    
+                "**<#1150390653197488179>** - Gaming VC 1 🎮\n"
+                "**<#1150390731337384017>** - Gaming VC 2 🎮\n"
+                "**<#1150390772533841920>** - Gaming VC 3 🎮\n"
+            ),
+            inline = False
+        )
+        
         await interaction.response.send_message(embed=embed)
 
 async def setup(bot: commands.Bot):
