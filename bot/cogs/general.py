@@ -14,9 +14,9 @@ class General(commands.Cog):
 
     @app_commands.command(name="hello", description="Say hello to Aiba")
     async def hello_command(self, interaction: discord.Interaction):
-        title = "🌸 こんにちわっっ、先輩ー！"
-        description = ("Aku **AIBA**! 🌟 Maskot utama Soushin yang bakal setia nemenin "
-                        "dan bantuin kamu di server ini! Hehe~ 0////0 \n\n"
+        title = "🌸 Yaharoo! Selamat datang, Senpai~ (≧▽≦)"
+        description = ("Aku **AIBA**! 🌟 Maskot utama Soushin yang bakal setia nemenin"
+                        "dan bantuin kamu di server ini! Hehe~ ( ˶ˆ꒳ˆ˵ ) \n\n"
                         "✨ *Pstt...* Gunakan command `/help` yaa untuk mengetahui command lain...."
                         )
     
@@ -26,30 +26,78 @@ class General(commands.Cog):
     @app_commands.command(name="help", description="need help?")
     async def help_command(self, interaction: discord.Interaction):
 
-        title = "Slash Comamnds"
+        title = "🌸 こんにちは, Kamu bigung yaa ada command apa aja?! "
         
         description= (
-            "**👋 General Commands**\n\n"
-            "• `/hello` — Kenalan dengan aiba 🌸.\n"
-            "• `/help` — Menampilkan daftar command pada server.\n"
-            "• `/about` — Informasi mengenai server.\n"
-            "**🦢 Soushin Commands**\n\n"
-            "• `/soushin` — Pelajari apa itu Soushin.\n"
+            "sini aiba kasi paham (❁´◡`❁)"
         )
 
         embed = make_output(title,description)
+        
+        embed.add_field(
+            name="**💬 ──────── General ────────**\n\n",
+            value=  "• `/hello` — Kenalan dengan aiba 🌸.\n"
+                    "• `/help` — Menampilkan daftar command pada server.\n"
+                    "• `/about` — Informasi mengenai server.\n"
+        )
+        
+        embed.add_field(
+            name="**🦢 ──────── Soushin ────────**\n\n",
+            value=  "• `/soushin` — Mengenali soushin 🌟.\n"
+                    "• `/proker` — Proker aja saja yang ada di soushin.\n"
+                    "• `/bph` — Struktur BPH.\n"
+        )
+        
         await interaction.response.send_message(embed=embed)
 
     @app_commands.command(name="about", description="Informasi mengenai server")
     async def about_command(self, interaction: discord.Interaction):
 
-        title = "🌸 こんにちは "
+        title = "🌸 こんにちは, Selamat datang di Soushin! "
         
         description= (
-            "• `#general-chatroom` - untuk ngomong bersama"
+            "Biar nggak nyasar, aiba udah buatin panduan singkat buat channel-channel di sini yaa~ (●'◡'●)"
         )
 
         embed = make_output(title,description)
+        
+        embed.add_field(
+            name="💬 ──────── Sosial ────────",
+            value=(
+                "**<#1149357512143945828>** - Tempat ngobrol bareng\n"
+                "**<#1149705399650484284>** - Pamerin makanan enak! 🍜\n"
+                "**<#1150392131815489577>** - Pamerin pet kalian! 😺🐶\n"
+                "**<#1149705265722171472>** - Sharing Foto 📸\n"
+            ),
+            inline=False
+        )
+        
+        embed.add_field(
+            name="☕ ──────── Soushin Cafe ────────",
+            value=(
+                "**<#1150389525441425468>** - Galeri buat pamer hasil karya seni kamu! 🎨 \n"
+                "**<#1150424223995658362>** - Sharing tentang bahasa jepang 🗾\n"
+                "**<#1150391779565240362>** - Tempat sharing foto cosplay 🪞\n"
+                "**<#1150388138104066048>** - Tempat untuk artist ngobrol 🖼️\n"
+                "**<#1155837776248446996>** - Main bot Mudae 🤖\n"
+                "**<#1149726973644525710>** - Tempat puterin musik 🎵\n"
+            ),
+            inline=False
+        )
+        
+        embed.add_field(
+            name="🔊 ──────── Voice Chat ────────",
+            value =( 
+                "**<#1149705154422112256>** - Chat VC 💬\n"    
+                "**<#1150389234826477598>** - VC artist 🔊\n"
+                "**<#1150393560173125772>** - VC cosplay 🔊\n"
+                "**<#1150742314013179915>** - Coffee shop 🔊\n"
+                "**<#1150424179284377674>** - VC Bahasa 🔊\n"
+                "**<#1216022911651942440>** - Random VC 🔊\n"
+            ),
+            inline = False
+        )
+        
         await interaction.response.send_message(embed=embed)
 
 async def setup(bot: commands.Bot):
