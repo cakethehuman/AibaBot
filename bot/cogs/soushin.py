@@ -47,6 +47,14 @@ class Soushin(commands.Cog):
         embed = make_output(title,description)
         await interaction.response.send_message(embed=embed)
         
+    @app_commands.command(name="kelas", description="Mascot soushin")
+    async def kelas_command(self, interaction: discord.Interaction):
+        title = "🌸 こんにちは!"
+        description = ("⚠️ STILL DEVELOPMENT")
+    
+        embed = make_output(title,description)
+        await interaction.response.send_message(embed=embed)
+        
         
 async def setup(bot: commands.Bot):
     await bot.add_cog(Soushin(bot))

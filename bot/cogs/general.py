@@ -15,7 +15,7 @@ class General(commands.Cog):
     @app_commands.command(name="hello", description="Say hello to Aiba")
     async def hello_command(self, interaction: discord.Interaction):
         title = "🌸 Yaharoo! Selamat datang, Senpai~ (≧▽≦)"
-        description = ("Aku **AIBA**! 🌟 Maskot utama Soushin yang bakal setia nemenin\n"
+        description = ("Aku **AIBA**! 🌟 Maskot utama Soushin yang bakal setia menemani\n"
                         "dan bantuin kamu di server ini! Hehe~ ( ˶ˆ꒳ˆ˵ ) \n\n"
                         "✨ *Pstt...* Gunakan command `/help` yaa untuk mengetahui command lain...."
                         )
@@ -44,8 +44,10 @@ class General(commands.Cog):
         embed.add_field(
             name="**🦢 ──────── Soushin ────────**\n\n",
             value=  "• `/soushin` — Mengenali soushin 🌟.\n"
-                    "• `/proker` — Proker aja saja yang ada di soushin.\n"
+                    "• `/proker` — Proker yang ada di soushin.\n"
                     "• `/bph` — Struktur BPH.\n"
+                    "• `/maskot` — Maskot soushin.\n"
+                    "• `/kelas` — Kelas soushin.\n"
         )
         
         await interaction.response.send_message(embed=embed)
@@ -62,72 +64,72 @@ class General(commands.Cog):
         embed = make_output(title,description)
         
         embed.add_field(
-            name="💬 ──────── Important ────────",
+            name="**💬 ──────── Important ────────**\n\n",
             value=(
-                "**<#1149360980317454337>** - Tempat nyambut temen-temen baru! Jangan lupa disapa yaa~ (≧◡≦)n\n"
-                "**<#1149355230912323586>** - Pengumuman acara Soushin dong! Jangan sampe ketinggalan hihi 🎏\n"
-                "**<#1149355230912323585>** - Tolong baca rules-nya dulu ya! (´｡• ᵕ •｡`) ♡a\n"
-                "**<#1150401034812932188>** - Ambil self-roles kamu di sini yaaa \n"
+                "• **<#1149360980317454337>** - Tempat nyambut temen-temen baru! Jangan lupa disapa yaa~ (≧◡≦)n\n"
+                "• **<#1149355230912323586>** - Pengumuman acara Soushin dong! Jangan sampe ketinggalan hihi 🎏\n"
+                "• **<#1149355230912323585>** - Tolong baca rules-nya dulu ya! (´｡• ᵕ •｡`) ♡a\n"
+                "• **<#1150401034812932188>** - Ambil self-roles kamu di sini yaaa \n"
             ),
             inline=False
         )
         
         embed.add_field(
-            name="💬 ──────── Sosial ────────",
+            name="**💬 ──────── Sosial ────────**\n\n",
             value=(
-                "**<#1149357512143945828>** - Tempat ngobrol bareng\n"
-                "**<#1149705399650484284>** - Pamerin makanan enak! 🍜\n"
-                "**<#1150392131815489577>** - Pamerin pet kalian! 😺🐶\n"
-                "**<#1149705265722171472>** - Sharing Foto 📸\n"
+                "• **<#1149357512143945828>** - Tempat ngobrol bareng\n"
+                "• **<#1149705399650484284>** - Pamerin makanan enak! 🍜\n"
+                "• **<#1150392131815489577>** - Pamerin pet kalian! 😺🐶\n"
+                "• **<#1149705265722171472>** - Sharing Foto 📸\n"
             ),
             inline=False
         )
         
         embed.add_field(
-            name="☕ ──────── Soushin Cafe ────────",
+            name="**☕ ──────── Soushin Cafe ────────**\n\n",
             value=(
-                "**<#1150389525441425468>** - Galeri buat pamer hasil karya seni kamu! 🎨 \n"
-                "**<#1150424223995658362>** - Sharing tentang bahasa jepang 🗾\n"
-                "**<#1150391779565240362>** - Tempat sharing foto cosplay 🪞\n"
-                "**<#1150388138104066048>** - Tempat untuk artist ngobrol 🖼️\n"
-                "**<#1155837776248446996>** - Main bot Mudae 🤖\n"
-                "**<#1149726973644525710>** - Tempat puterin musik 🎵\n"
+                "• **<#1150389525441425468>** - Galeri buat pamer hasil karya seni kamu! 🎨 \n"
+                "• **<#1150424223995658362>** - Sharing tentang bahasa jepang 🗾\n"
+                "• **<#1150391779565240362>** - Tempat sharing foto cosplay 🪞\n"
+                "• **<#1150388138104066048>** - Tempat untuk artist ngobrol 🖼️\n"
+                "• **<#1155837776248446996>** - Main bot Mudae 🤖\n"
+                "• **<#1149726973644525710>** - Tempat puterin musik 🎵\n"
             ),
             inline=False
         )
         
         embed.add_field(
-            name="🔊 ──────── Voice Chat ────────",
+            name="**🔊 ──────── Voice Chat ────────**\n\n",
             value =( 
-                "**<#1149705154422112256>** - Chat VC 💬\n"    
-                "**<#1150389234826477598>** - VC artist 🔊\n"
-                "**<#1150393560173125772>** - VC cosplay 🔊\n"
-                "**<#1150742314013179915>** - Coffee shop 🔊\n"
-                "**<#1150424179284377674>** - VC Bahasa 🔊\n"
-                "**<#1216022911651942440>** - Random VC 🔊\n"
+                "• **<#1149705154422112256>** - Chat VC 💬\n"    
+                "• **<#1150389234826477598>** - VC artist 🔊\n"
+                "• **<#1150393560173125772>** - VC cosplay 🔊\n"
+                "• **<#1150742314013179915>** - Coffee shop 🔊\n"
+                "• **<#1150424179284377674>** - VC Bahasa 🔊\n"
+                "• **<#1216022911651942440>** - Random VC 🔊\n"
             ),
             inline = False
         )
         
         embed.add_field(
-            name="🍡 ──────── Fandom ────────",
+            name="**🍡 ──────── Fandom ────────**\n\n",
             value =( 
-                "**<#1150390344916148236>** - Anime 🏯\n"    
-                "**<#1150311053041868850>** - Genshin impact\n"
-                "**<#1150311089825906750>** - Honkai: Star Rail\n"
-                "**<#1150311370093502495>** - Wuthering Waves \n"
-                "**<#1150430616437923982>** - Manga dan manhwa \n"
+                "• **<#1150390344916148236>** - Anime 🏯\n"    
+                "• **<#1150311053041868850>** - Genshin impact\n"
+                "• **<#1150311089825906750>** - Honkai: Star Rail\n"
+                "• **<#1150311370093502495>** - Wuthering Waves \n"
+                "• **<#1150430616437923982>** - Manga dan manhwa \n"
             ),
             inline = False
         )
         
         embed.add_field(
-            name="👾 ──────── Gaming ────────",
+            name="**👾 ──────── Gaming ────────**\n\n",
             value =( 
-                "**<#1289434009146753074>** - Gaming chat💬\n"    
-                "**<#1150390653197488179>** - Gaming VC 1 🎮\n"
-                "**<#1150390731337384017>** - Gaming VC 2 🎮\n"
-                "**<#1150390772533841920>** - Gaming VC 3 🎮\n"
+                "• **<#1289434009146753074>** - Gaming chat💬\n"    
+                "• **<#1150390653197488179>** - Gaming VC 1 🎮\n"
+                "• **<#1150390731337384017>** - Gaming VC 2 🎮\n"
+                "• **<#1150390772533841920>** - Gaming VC 3 🎮\n"
             ),
             inline = False
         )
