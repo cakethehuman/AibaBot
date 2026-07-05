@@ -23,23 +23,26 @@ class Soushin(commands.Cog):
         embed = make_output(title,description)
         await interaction.response.send_message(embed=embed)
     
-    @app_commands.command(name="proker", description="Say hello to Aiba")
+    @app_commands.command(name="proker", description="proker yang ada di soushin")
     async def proker_command(self, interaction: discord.Interaction):
         title = "🌸 こんにちは!"
-        description = ("私は **AIBA**! 🌟\n"
-                       "Aku maskot utama shoushin yang siap membantu kamu di sever ini\n"
-                        "Gunnakan command /help untuk liat semua command pada server"
-                        )
+        description = ("⚠️ STILL DEVELOPMENT")
     
         embed = make_output(title,description)
         await interaction.response.send_message(embed=embed)
         
-    @app_commands.command(name="bph", description="Say hello to Aiba")
+    @app_commands.command(name="bph", description="bph di soushin")
     async def bph_command(self, interaction: discord.Interaction):
         title = "🌸 こんにちは!"
-        description = ("私は **AIBA**! 🌟\n"
-                       "lagi di buat"
-                        )
+        description = ("⚠️ STILL DEVELOPMENT")
+    
+        embed = make_output(title,description)
+        await interaction.response.send_message(embed=embed)
+        
+    @app_commands.command(name="mascot", description="Mascot soushin")
+    async def mascot_command(self, interaction: discord.Interaction):
+        title = "🌸 こんにちは!"
+        description = ("⚠️ STILL DEVELOPMENT")
     
         embed = make_output(title,description)
         await interaction.response.send_message(embed=embed)

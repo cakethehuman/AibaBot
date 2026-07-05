@@ -15,7 +15,7 @@ class General(commands.Cog):
     @app_commands.command(name="hello", description="Say hello to Aiba")
     async def hello_command(self, interaction: discord.Interaction):
         title = "🌸 Yaharoo! Selamat datang, Senpai~ (≧▽≦)"
-        description = ("Aku **AIBA**! 🌟 Maskot utama Soushin yang bakal setia nemenin"
+        description = ("Aku **AIBA**! 🌟 Maskot utama Soushin yang bakal setia nemenin\n"
                         "dan bantuin kamu di server ini! Hehe~ ( ˶ˆ꒳ˆ˵ ) \n\n"
                         "✨ *Pstt...* Gunakan command `/help` yaa untuk mengetahui command lain...."
                         )
