@@ -9,7 +9,7 @@ from ..services.outputformat import make_output
 
 logger = logging.getLogger(__name__)
 class General(commands.Cog):
-    def __init__(self, bot: commands.Bot):
+    def __init__(self, bot):
         self.bot = bot
 
     @app_commands.command(name="hello", description="Say hello to Aiba")
@@ -26,10 +26,10 @@ class General(commands.Cog):
     @app_commands.command(name="help", description="need help?")
     async def help_command(self, interaction: discord.Interaction):
 
-        title = "🌸 こんにちは, Kamu bigung yaa ada command apa aja?! "
+        title = "🌸 ヤフー, Kamu bigung yaa ada command apa aja?! "
         
         description= (
-            "sini aiba kasi paham (❁´◡`❁)"
+            "sini aiba kasi tau (❁´◡`❁)"
         )
 
         embed = make_output(title,description)
@@ -55,7 +55,7 @@ class General(commands.Cog):
     @app_commands.command(name="about", description="Informasi mengenai server")
     async def about_command(self, interaction: discord.Interaction):
 
-        title = "🌸 こんにちは, Selamat datang di Soushin! "
+        title = "🌸 ヤフー, Selamat datang di Soushin! "
         
         description= (
             "Biar nggak nyasar, aiba udah buatin panduan singkat buat channel-channel di sini yaa~ (●'◡'●)"
