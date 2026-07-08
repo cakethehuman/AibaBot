@@ -11,7 +11,7 @@ class Soushin(commands.Cog):
     def __init__(self, bot):
         self.bot = bot
         
-    @app_commands.command(name="soushin", description="Say hello to Aiba")
+    @app_commands.command(name="soushin", description="Perkenalan tentang soushin")
     async def soushin_command(self, interaction: discord.Interaction):
         logging.info("Used Hello command")
         title = "🌸 ヤフー!"
