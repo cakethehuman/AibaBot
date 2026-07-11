@@ -39,7 +39,7 @@ class Soushin(commands.Cog):
         embed = make_output(title,description)
         await interaction.response.send_message(embed=embed)
         
-    @app_commands.command(name="mascot", description="Mascot soushin")
+    @app_commands.command(name="maskot", description="Mascot soushin")
     async def mascot_command(self, interaction: discord.Interaction):
         title = "🌸 ヤフー!"
         description = ("⚠️ STILL DEVELOPMENT")
@@ -54,6 +54,13 @@ class Soushin(commands.Cog):
     
         embed = make_output(title,description)
         await interaction.response.send_message(embed=embed)
+        message = await interaction.original_response()
+        await message.add_reaction("1️⃣")
+        await message.add_reaction("2️⃣")
+        await message.add_reaction("3️⃣")
+        
+        # def check(reaction, user):
+            
         
         
 async def setup(bot: commands.Bot):
