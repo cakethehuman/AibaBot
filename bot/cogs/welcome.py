@@ -14,7 +14,7 @@ class Welcome(commands.Cog):
     async def on_member_join(self, member: discord.Member):
         channel_id = settings.WELCOME_CHANNEL_ID
         channel = self.bot.get_channel(channel_id)
-        logger.info(f"Test 123")
+        logger.info(f"A member has joined")
         if channel is None:
             try:
                 channel = await self.bot.fetch_channel(channel_id)
