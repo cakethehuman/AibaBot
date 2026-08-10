@@ -4,7 +4,7 @@ import discord
 from discord import app_commands
 from discord.ext import commands
 
-from ..services.outputformat import make_output
+from bot.services.outputformat import make_output
 
 logger = logging.getLogger(__name__)
 class Soushin(commands.Cog):

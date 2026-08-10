@@ -2,8 +2,8 @@ import logging
 
 import discord
 from discord.ext import commands
-from ..core.config import settings
-from ..services.outputformat import make_output
+from bot.core.config import settings
+from bot.services.outputformat import make_output
 
 logger = logging.getLogger(__name__)
 class Welcome(commands.Cog):
