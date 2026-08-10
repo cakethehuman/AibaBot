@@ -31,21 +31,6 @@ class Soushin(commands.Cog):
         embed = make_output(title,description)
         await interaction.response.send_message(embed=embed)
         
-    @app_commands.command(name="bph", description="bph di soushin")
-    async def bph_command(self, interaction: discord.Interaction):
-        title = "🌸 ヤフー!"
-        description = ("⚠️ STILL DEVELOPMENT")
-    
-        embed = make_output(title,description)
-        await interaction.response.send_message(embed=embed)
-        
-    @app_commands.command(name="maskot", description="Mascot soushin")
-    async def mascot_command(self, interaction: discord.Interaction):
-        title = "🌸 ヤフー!"
-        description = ("⚠️ STILL DEVELOPMENT")
-    
-        embed = make_output(title,description)
-        await interaction.response.send_message(embed=embed)
         
     @app_commands.command(name="kelas", description="Mascot soushin")
     async def kelas_command(self, interaction: discord.Interaction):
@@ -57,7 +42,7 @@ class Soushin(commands.Cog):
         message = await interaction.original_response()
         await message.add_reaction("1️⃣")
         await message.add_reaction("2️⃣")
-        await message.add_reaction("3️⃣")
+        await message.add_reaction("3️⃣") 
         
         # def check(reaction, user):
             
