@@ -24,49 +24,50 @@ class Soushin(commands.Cog):
         embed = make_output(title,description)
         await interaction.response.send_message(embed=embed)
     
-    @app_commands.command(name="proker", description="proker yang ada di soushin")
-    async def proker_command(self, interaction: discord.Interaction):
-        title = "🌸 ヤフー!"
-        description = ("⚠️ STILL DEVELOPMENT")
+    # Development
+    # @app_commands.command(name="proker", description="proker yang ada di soushin")
+    # async def proker_command(self, interaction: discord.Interaction):
+    #     title = "🌸 ヤフー!"
+    #     description = ("⚠️ STILL DEVELOPMENT")
     
-        embed = make_output(title,description)
-        await interaction.response.send_message(embed=embed)
+    #     embed = make_output(title,description)
+    #     await interaction.response.send_message(embed=embed)
         
-        
-    @app_commands.command(name="kelas", description="Mascot soushin")
-    async def kelas_command(self, interaction: discord.Interaction):
-        title = "🌸 ヤフー!"
-        description = ("⚠️ STILL DEVELOPMENT")
+    # Development
+    # @app_commands.command(name="kelas", description="Mascot soushin")
+    # async def kelas_command(self, interaction: discord.Interaction):
+    #     title = "🌸 ヤフー!"
+    #     description = ("⚠️ STILL DEVELOPMENT")
     
-        embed = make_output(title,description)
-        await interaction.response.send_message(embed=embed)
-        message = await interaction.original_response()
-        await message.add_reaction("1️⃣")
-        await message.add_reaction("2️⃣")
-        await message.add_reaction("3️⃣") 
+    #     embed = make_output(title,description)
+    #     await interaction.response.send_message(embed=embed)
+    #     message = await interaction.original_response()
+    #     await message.add_reaction("1️⃣")
+    #     await message.add_reaction("2️⃣")
+    #     await message.add_reaction("3️⃣") 
         
         
-        def check(reaction, user):
-            return (user == interaction.user and reaction.message.id == message.id and str(reaction.emoji) in ["1️⃣", "2️⃣", "3️⃣"])
+    #     def check(reaction, user):
+    #         return (user == interaction.user and reaction.message.id == message.id and str(reaction.emoji) in ["1️⃣", "2️⃣", "3️⃣"])
             
-        try:
-            reaction, user = await self.bot.wait_for("reaction_add", timeout = 30, check=check)
-        except asyncio.TimeoutError:
-            return await interaction.followup.send("Waktu habis, gak ada pilihan yang dipilih.")
+    #     try:
+    #         reaction, user = await self.bot.wait_for("reaction_add", timeout = 30, check=check)
+    #     except asyncio.TimeoutError:
+    #         return await interaction.followup.send("Waktu habis, gak ada pilihan yang dipilih.")
 
-        match str(reaction.emoji): 
-            case "1️⃣":
-                kelas_embed = make_output("Kelas Bahasa", "Isi materi kelas bahasa di sini.")
-                await interaction.followup.send(embed=kelas_embed)
-            case "2️⃣":
-                kelas_embed = make_output("Manga here")
-                await interaction.followup.send(embed=kelas_embed)
-            case "3️⃣":
-                kelas_embed = make_output("Cosplay")
-                await interaction.followup.send(embed=kelas_embed)
-            case _:
-                gagal_embed = make_output("Tidak bisa")
-                await interaction.followup.send(embed=gagal_embed)
+    #     match str(reaction.emoji): 
+    #         case "1️⃣":
+    #             kelas_embed = make_output("Kelas Bahasa", "Isi materi kelas bahasa di sini.")
+    #             await interaction.followup.send(embed=kelas_embed)
+    #         case "2️⃣":
+    #             kelas_embed = make_output("Manga here")
+    #             await interaction.followup.send(embed=kelas_embed)
+    #         case "3️⃣":
+    #             kelas_embed = make_output("Cosplay")
+    #             await interaction.followup.send(embed=kelas_embed)
+    #         case _:
+    #             gagal_embed = make_output("Tidak bisa")
+    #             await interaction.followup.send(embed=gagal_embed)
                 
 async def setup(bot: commands.Bot):
     await bot.add_cog(Soushin(bot))
