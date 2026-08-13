@@ -25,18 +25,13 @@ class General(commands.Cog):
         
         embed.add_field(
             name="**💬 ──────── General ────────**\n\n",
-            value=  "• `/hello` — Kenalan dengan aiba 🌸.\n"
-                    "• `/help` — Menampilkan daftar command pada server.\n"
-                    "• `/about` — Informasi mengenai server.\n"
+            value=  "• `/help` — Menampilkan daftar command pada server.\n"
         )
         
         embed.add_field(
             name="**🦢 ──────── Soushin ────────**\n\n",
             value=  "• `/soushin` — Mengenali soushin 🌟.\n"
                     "• `/proker` — Proker yang ada di soushin.\n"
-                    "• `/bph` — Struktur BPH.\n"
-                    "• `/maskot` — Maskot soushin.\n"
-                    "• `/kelas` — Kelas soushin.\n"
         )
         
         await interaction.response.send_message(embed=embed)
