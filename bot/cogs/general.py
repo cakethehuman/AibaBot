@@ -1,6 +1,5 @@
 import logging
-import random
-from datetime import datetime
+import json
 
 import discord
 from discord import app_commands
@@ -33,6 +32,31 @@ class General(commands.Cog):
             value=  "• `/soushin` — Mengenali soushin 🌟.\n"
                     "• `/proker` — Proker yang ada di soushin.\n"
         )
+        
+        await interaction.response.send_message(embed=embed)
+        
+        
+    @app_commands.command(name="test", description="need help?")
+    async def help_command(self, interaction: discord.Interaction):
+        test = """
+        {
+        "content": null,
+        "embeds": [
+            {
+            "title": "s",
+            "description": "s",
+            "color": 14705764,
+            "author": {
+                "name": "s"
+            }
+            }
+        ],
+        "attachments": []
+        }
+        """
+        
+        data = json.loads(test)
+        embed = discord.Embed.from_dict(data["embeds"][0])
         
         await interaction.response.send_message(embed=embed)
 
