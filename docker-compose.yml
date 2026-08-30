@@ -1,0 +1,8 @@
+services:
+  app:
+    image: ${IMAGE_NAME:-cakethehuman/aiba-bot}:${IMAGE_TAG:-latest}
+    build:
+      context: .
+      dockerfile: Dockerfile
+    env_file:
+      - .env
