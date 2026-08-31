@@ -6,12 +6,12 @@ from discord.ext import commands
 
 logger = logging.getLogger(__name__)
 
-class ProkerButtons(discord.ui.view):
+class ProkerButtons(discord.ui.View):
     def __init__(self):
         super().__init__(timeout=None)
         
     @discord.ui.button(label='WP', style=discord.ButtonStyle.red, custom_id="welcoming party")
-    async def WP_button(self, interaction: discord.Interaction):
+    async def WP_button(self, interaction: discord.Interaction, button: discord.ui.Button):
         await interaction.response.send_message("test code ig")
 
 class Soushin(commands.Cog):
