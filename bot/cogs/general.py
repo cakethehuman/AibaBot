@@ -167,7 +167,7 @@ class General(commands.Cog):
             if message.author == self.bot.user:
                 try:
                     await message.delete()
-                    logger.info("Message was delete succes")
+                    logger.info("Message was delete success")
                 except discord.HTTPException as e:
                     logger.info(f"Error because of {e}")
         
