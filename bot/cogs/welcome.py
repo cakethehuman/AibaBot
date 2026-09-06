@@ -15,7 +15,7 @@ class Welcome(commands.Cog):
         
         channel_id = settings.WELCOME_CHANNEL_ID
         channel = self.bot.get_channel(channel_id)
-        logger.info(f"A member has joined {member.name}")
+        logger.info(f"A member has joined {member.name} number of members : {server.member_count}")
         if channel is None:
             try:
                 channel = await self.bot.fetch_channel(channel_id)
@@ -27,14 +27,15 @@ class Welcome(commands.Cog):
             description= f"""Let's greet our new friend, {member.mention}! ようこそ〜！🌸,  
             ⛩️ **Welcome to Soushin: Tarumanagara Nihon Bu!**\nYaharoo, Senpai (≧▽≦)!
             Aku AIBA! Maskot utama Soushin yang bakal menemani kamu selama berada di server ini! Hehe, yoroshiku! ( ˶ˆ꒳ˆ˵ )
-            ﹌﹌﹌﹌﹌﹌﹌﹌\n🪷 Baca ⁠<#1149355230912323585> dan ngobrol di ⁠<#1149357512143945828>!
+            ﹌﹌﹌﹌﹌﹌﹌﹌
+            🪷 Baca ⁠<#1149355230912323585> dan ngobrol di ⁠<#1149357512143945828>!
             🌻 Kunjungi <#1543187478595506258> dan ceritakan tentang dirimu! ♡
             
             (˶˃𐃷˂˶) HMmm... Mau tauu lebih jauh tentang Soushin  :o? Sini AIBA ajarin! 
             🌹Cek `/soushin` untuk mengenal UKM dan hal-hal yang ada di dalamnya!
             ⛩️ Penasaran Soushin punya kegiatan apa aja? Gunakan `/proker` untuk melihat berbagai program kerja Soushin!
             🛠️ Butuh bantuan? Gunakan `/help` untuk melihat command yang tersedia dan mengetahui apa saja yang bisa kamu lakukan di server ini!
-            -# Psst... coba `/help` dulu yaa, biar nggak tersesat! Ი𐑼
+            -#Psst... coba `/help` dulu yaa, biar nggak tersesat! Ი𐑼
             
             """,
             color=16727604
