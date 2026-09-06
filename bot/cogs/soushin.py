@@ -26,7 +26,7 @@ class Soushin(commands.Cog):
         )
         
         await interaction.response.send_message(embed=embed, view=proker)
-        
+    
     
 async def setup(bot: commands.Bot):
     await bot.add_cog(Soushin(bot))
