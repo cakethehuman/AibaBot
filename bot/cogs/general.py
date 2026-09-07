@@ -11,7 +11,7 @@ logger = logging.getLogger(__name__)
 
 class RulesInfo(discord.ui.View):
     def __init__(self):
-        super().__init__(timeout=180)
+        super().__init__(timeout=None)
         
     @discord.ui.button(label='𑣲 Rules', style=discord.ButtonStyle.gray, custom_id="Rules")
     async def Rules(self, interaction: discord.Interaction, button: discord.ui.Button):
@@ -54,7 +54,6 @@ class RulesInfo(discord.ui.View):
         embed = discord.Embed(description=("## 「Soushin」とは？\n\n"
                                            "Soushin (相信): Tarumanagara Nihon Bu adalah Unit Kegiatan Mahasiswa (UKM) di Universitas Tarumanagara yang bergerak di bidang Jejepangan dengan tujuan menjadi wadah untuk menampung serta menyalurkan hobi, bakat, dan minat mahasiswa-mahasiswi Universitas Tarumanagara dalam bidang tersebut. Soushin didirikan pada tahun 2016 menjadikannya UKM termuda Universitas Tarumanagara yang kini telah menginjak usia 10 tahun. Di UKM ini, mahasiswa juga dapat mengembangkan keterampilan berorganisasi yang profesional, mandiri, dan berintegritas dengan landasan kekeluargaan.\n\n"
                                            "Nama Soushin sendiri juga memiliki arti yang berasal dari gabungan dua kata yaitu: Sou (相) yang berarti “Bersama” dan Shin (信) yang berarti “Kepercayaan, Kejujuran, dan Kesetiaan”. Oleh karena itu, nama Soushin menjadi pedoman tersendiri bagi organisasi ini untuk selalu berasaskan kepercayaan dan kekeluargaan yang berorientasi pada budaya Jepang.\n\n"
-                                           "brief explanation about what soushin is. like Soushin: tarumanagara nihon bu adalah sebuah ukm dalam blablabla\n\n"
                                            "## Contact Us!\n> - <@&1149358801397485699> member dengan role ini adalah seorang BPH. Badan Pengurus Harian adalah struktur inti atau eksekutif yang bertanggung jawab menjalankan kegiatan dan operasional organisasi sehari-hari.\n"
                                            "> - <@&1546148492458856468> member dengan role ini merupakan member yang membantu dengan perkembangan bot dan server soushin.\n"
                                            "**Jika mempunyai pertanyaan atau masalah**, diharapkan untuk contact member yang memiliki role diatas :D"),
@@ -64,7 +63,7 @@ class RulesInfo(discord.ui.View):
 
 class Info(discord.ui.View): 
     def __init__(self):
-        super().__init__(timeout=180)
+        super().__init__(timeout=None)
 
     @discord.ui.button(label='✿ Kelas', style=discord.ButtonStyle.gray, custom_id="Kelas")
     async def Kelas(self, interaction: discord.Interaction, button: discord.ui.Button):
@@ -126,16 +125,18 @@ class General(commands.Cog):
     def __init__(self, bot):
         self.bot = bot
         
-    @app_commands.command(name="help", description="need help?")
-    async def help_command(self, interaction: discord.Interaction):
-        embed = discord.Embed(
-            description="Bot under contruction 🤖"
-        )
-        await interaction.response.send_message(embed=embed)
+    # @app_commands.command(name="help", description="need help?")
+    # async def help_command(self, interaction: discord.Interaction):
+    #     embed = discord.Embed(
+    #         description="Bot under contruction 🤖"
+    #     )
+    #     await interaction.response.send_message(embed=embed)
         
         
-    @commands.Cog.listener()
-    async def on_ready(self):
+    @app_commands.command(name="rules-and-info", description="Setup rules and info")
+    @app_commands.default_permissions(administrator=True)
+    @app_commands.checks.has_permissions(administrator=True)
+    async def RulesAndInfo(self, interaction: discord.Interaction):
         channel_id = settings.RULES_INFO_ID
         channel = self.bot.get_channel(channel_id)
         async for message in channel.history(limit=500):
@@ -149,6 +150,7 @@ class General(commands.Cog):
         logger.info("Made the Rules and Info")
         banner = discord.File('bot/assets/Rules & Info.png')
         rules_info_button = RulesInfo()
+        await interaction.response.send_message("Success", ephemeral=True)
         await channel.send(file=banner, view=rules_info_button)
          
 

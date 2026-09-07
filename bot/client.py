@@ -4,6 +4,13 @@ from pathlib import Path
 import discord
 from discord.ext import commands
 
+from bot.cogs.general import RulesInfo
+from bot.cogs.roles import KelasRolesButton
+from bot.cogs.roles import AngkatanButton
+from bot.cogs.roles import FakultasButton
+from bot.cogs.roles import PronounsButton
+from bot.cogs.roles import DmButton
+
 from bot.core.config import settings
 
 logger = logging.getLogger(__name__)
@@ -16,6 +23,13 @@ class MyBot(commands.Bot):
         super().__init__(command_prefix="!unused", intents=intents)
 
     async def setup_hook(self):
+        self.add_view(RulesInfo())
+        self.add_view(KelasRolesButton())
+        self.add_view(AngkatanButton())
+        self.add_view(FakultasButton())
+        self.add_view(PronounsButton())
+        self.add_view(DmButton())
+        logger.info("Persistent view 'Kelas Roles Button' has been registered.")
         cogs_path = Path(__file__).parent / "cogs"
         for file in cogs_path.glob("*.py"):
             if file.stem == "__init__":
