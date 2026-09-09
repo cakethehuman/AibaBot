@@ -14,7 +14,7 @@ class RulesInfo(discord.ui.View):
         super().__init__(timeout=None)
         
     @discord.ui.button(label='𑣲 Rules', style=discord.ButtonStyle.gray, custom_id="Rules")
-    async def Rules(self, interaction: discord.Interaction, button: discord.ui.Button):
+    async def rules(self, interaction: discord.Interaction, button: discord.ui.Button):
         banner = discord.File('bot/assets/Rules.png')
         embed = discord.Embed(
             description=(
@@ -38,7 +38,7 @@ class RulesInfo(discord.ui.View):
         await interaction.response.send_message(file=banner, embed=embed, ephemeral=True)
     
     @discord.ui.button(label='✦ Info', style=discord.ButtonStyle.gray, custom_id="Info")
-    async def Info(self, interaction: discord.Interaction, button: discord.ui.Button):
+    async def info(self, interaction: discord.Interaction, button: discord.ui.Button):
         banner = discord.File('bot/assets/Information.png')
         info_buttons = Info()
         embed = discord.Embed(
@@ -49,7 +49,7 @@ class RulesInfo(discord.ui.View):
         await interaction.response.send_message(file=banner, embed=embed, ephemeral=True, view=info_buttons)
         
     @discord.ui.button(label='♪ About & Contact Us', style=discord.ButtonStyle.gray, custom_id="About&contact")
-    async def Resources(self, interaction: discord.Interaction, button: discord.ui.Button):
+    async def resources(self, interaction: discord.Interaction, button: discord.ui.Button):
         banner = discord.File('bot/assets/About & Contact.png')
         embed = discord.Embed(description=("## 「Soushin」とは？\n\n"
                                            "Soushin (相信): Tarumanagara Nihon Bu adalah Unit Kegiatan Mahasiswa (UKM) di Universitas Tarumanagara yang bergerak di bidang Jejepangan dengan tujuan menjadi wadah untuk menampung serta menyalurkan hobi, bakat, dan minat mahasiswa-mahasiswi Universitas Tarumanagara dalam bidang tersebut. Soushin didirikan pada tahun 2016 menjadikannya UKM termuda Universitas Tarumanagara yang kini telah menginjak usia 10 tahun. Di UKM ini, mahasiswa juga dapat mengembangkan keterampilan berorganisasi yang profesional, mandiri, dan berintegritas dengan landasan kekeluargaan.\n\n"
@@ -66,7 +66,7 @@ class Info(discord.ui.View):
         super().__init__(timeout=None)
 
     @discord.ui.button(label='✿ Kelas', style=discord.ButtonStyle.gray, custom_id="Kelas")
-    async def Kelas(self, interaction: discord.Interaction, button: discord.ui.Button):
+    async def kelas(self, interaction: discord.Interaction, button: discord.ui.Button):
         banner = discord.File('bot/assets/Kelas.png')
         embed = discord.Embed(
             description=("## DIVISI COSPLAY\n"
@@ -95,7 +95,7 @@ class Info(discord.ui.View):
 
 
     @discord.ui.button(label='✿ Proker', style=discord.ButtonStyle.gray, custom_id="Proker")
-    async def Proker(self, interaction: discord.Interaction, button: discord.ui.Button):
+    async def proker(self, interaction: discord.Interaction, button: discord.ui.Button):
         banner = discord.File('bot/assets/Proker.png')
         embed = discord.Embed(
             description=("## WELCOMING PARTY\n"
@@ -124,19 +124,11 @@ class Info(discord.ui.View):
 class General(commands.Cog):
     def __init__(self, bot):
         self.bot = bot
-        
-    # @app_commands.command(name="help", description="need help?")
-    # async def help_command(self, interaction: discord.Interaction):
-    #     embed = discord.Embed(
-    #         description="Bot under contruction 🤖"
-    #     )
-    #     await interaction.response.send_message(embed=embed)
-        
-        
+                
     @app_commands.command(name="rules-and-info", description="Setup rules and info")
     @app_commands.default_permissions(administrator=True)
     @app_commands.checks.has_permissions(administrator=True)
-    async def RulesAndInfo(self, interaction: discord.Interaction):
+    async def rules_and_info(self, interaction: discord.Interaction):
         channel_id = settings.RULES_INFO_ID
         channel = self.bot.get_channel(channel_id)
         async for message in channel.history(limit=500):

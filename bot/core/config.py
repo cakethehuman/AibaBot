@@ -21,6 +21,7 @@ class Settings(BaseSettings):
     FEB_ROLE: int | None = None
     FH_ROLE: int | None = None
     FT_ROLE: int | None = None
+    FAPRE_ROLE: int | None = None
     FK_ROLE: int | None = None
     FPSI_ROLE: int | None = None
     FSRD_ROLE: int | None = None
