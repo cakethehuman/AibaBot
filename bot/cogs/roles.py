@@ -88,7 +88,7 @@ class FakultasButton(discord.ui.View):
     async def ft_button(self, interaction: discord.Interaction, button: discord.ui.Button):
         await toggle_roles(interaction, settings.FT_ROLE)
         
-    @discord.ui.button(label='🏠', style=discord.ButtonStyle.grey, custom_id="FT")
+    @discord.ui.button(label='🏠', style=discord.ButtonStyle.grey, custom_id="farpe")
     async def fapre_button(self, interaction: discord.Interaction, button: discord.ui.Button):
         await toggle_roles(interaction, settings.FAPRE_ROLE)
 
@@ -169,7 +169,7 @@ class Roles(commands.Cog):
                          f"🎐 :: <@&{settings.MANGA_ROLE}>"),
             color=15496822
         )
-        
+        await interaction.response.send_message(f"Command Success", ephemeral=True)
         await interaction.channel.send(embed=embed, view=roles)
     
     @app_commands.command(name="angkatan-roles", description="Role angkatan")
@@ -192,7 +192,7 @@ class Roles(commands.Cog):
             ),
             color=15496822
         )
-        
+        await interaction.response.send_message(f"Command Success", ephemeral=True)
         await interaction.channel.send(embed=embed, view=tahunMasuk)
         
         
@@ -218,7 +218,7 @@ class Roles(commands.Cog):
             ),
             color=15496822
         )
-        
+        await interaction.response.send_message(f"Command Success", ephemeral=True)
         await interaction.channel.send(embed=embed, view=fakultas)
         
     @app_commands.command(name="pronouns-roles", description="Role pronouns")
@@ -238,7 +238,7 @@ class Roles(commands.Cog):
             ),
             color=15496822
         )
-        
+        await interaction.response.send_message(f"Command Success", ephemeral=True)
         await interaction.channel.send(embed=embed, view=pronouns)
         
     @app_commands.command(name="dm-roles", description="Role dms")
@@ -257,7 +257,8 @@ class Roles(commands.Cog):
             ),
             color=15496822
         )
-        
+        await interaction.response.send_message(f"Command Success", ephemeral=True)
         await interaction.channel.send(embed=embed, view=dm)
+        
 async def setup(bot: commands.Bot):
     await bot.add_cog(Roles(bot))
