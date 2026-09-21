@@ -25,7 +25,7 @@ class Welcome(commands.Cog):
           
         embed = discord.Embed(
             description= (
-            "Let's greet our new friend, {member.mention}! ようこそ〜！🌸\n" 
+            "Let's greet our new friend! ようこそ〜！🌸\n" 
             "⛩️ **Welcome to Soushin: Tarumanagara Nihon Bu!**\n"
             "Yaharoo, Senpai (≧▽≦)!\n"
             "Aku AIBA! Maskot utama Soushin yang bakal menemani kamu selama berada di server ini! Hehe, yoroshiku! ( ˶ˆ꒳ˆ˵ )\n"
