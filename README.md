@@ -71,14 +71,18 @@ The project structure may vary depending on the implementation. A typical layout
 
 ```text
 AibaBot/
-├── backend/
+├── bot/
+├── .dockerignore
 ├── .env.example
 ├── .gitignore
 ├── Dockerfile
-├── requirements.txt
-└── README.md
+├── LICENSE
+├── README.md
+├── docker-compose.yml
+├── main.py
+└── requirements.txt
 ```
 
 ## License
 
-No license has been specified yet. Please contact the repository owner for information about usage and distribution.
+This project is licensed under the MIT License. See the LICENSE file for details.
